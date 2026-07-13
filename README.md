@@ -24,3 +24,49 @@
 - [`PostServiceApp`](src/main/java/faang/school/postservice/PostServiceApp.java) — аннотация `@OpenAPIDefinition` с описанием API
 
 **Технологии:** SpringDoc OpenAPI (springdoc-openapi-starter-webmvc-ui)
+
+## CI
+
+Настроен GitHub Actions пайплайн для проверки Pull Request'ов в ветку `werewolf-master-stream8`: сборка проекта, прогон тестов, проверка стиля кода (Checkstyle), автоматический комментарий в PR при падении сборки.
+
+- [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
+
+## Стек
+
+- Java 17
+- Spring Boot 3
+- Spring Data JPA
+- PostgreSQL
+- Redis
+- Kafka
+- Feign Client
+- Liquibase
+- MapStruct
+- Testcontainers (PostgreSQL, Redis)
+- Checkstyle
+- JUnit 5, AssertJ
+
+## Запуск
+
+### Предварительные требования
+- Docker и Docker Compose
+- JDK 17
+
+### Шаги
+
+1. Поднять инфраструктуру (Postgres, Redis, MinIO, Kafka):
+```bash
+git clone https://github.com/Erik18999/infra.git
+cd infra
+./run.sh
+```
+2. Склонировать и запустить сам сервис (порт 8081):
+```bash
+git clone https://github.com/Erik18999/post_service.git
+cd post_service
+```
+Открыть проект в IntelliJ IDEA и запустить [`PostServiceApp`](src/main/java/faang/school/postservice/PostServiceApp.java).
+
+## Swagger UI
+
+http://localhost:8081/swagger-ui/index.html
