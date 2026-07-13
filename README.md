@@ -12,6 +12,7 @@
 - [`AlbumController`](src/main/java/faang/school/postservice/controller/AlbumController.java)
 - [`AlbumServiceImpl`](src/main/java/faang/school/postservice/service/impl/AlbumServiceImpl.java)
 - [`AlbumFilterServiceImpl`](src/main/java/faang/school/postservice/filter/service/AlbumFilterServiceImpl.java)
+- [`AlbumFilter`](src/main/java/faang/school/postservice/filter/album/AlbumFilter.java) — интерфейс фильтра (реализации: `TitleFilter`, `FromDateFilter`, `BeforeDateFilter`)
 - [`AlbumRepository`](src/main/java/faang/school/postservice/repository/AlbumRepository.java)
 
-**Технологии:** Spring Data JPA (нативные запросы), Feign Client, паттерн Strategy (список фильтров `AlbumFilter`), Lombok, JUnit 5 + Mockito
+**Технологии:** Spring Data JPA (нативные запросы), [`Feign Client`](src/main/java/faang/school/postservice/client/UserServiceClient.java), Lombok, JUnit 5 + Mockito
